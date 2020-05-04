@@ -24,22 +24,35 @@ public class ControlFlowExercises {
 //            y *= 2;
 //        } while (y <= 16);
 
-        //Using for loop instead:
-        for(int i = 5; i <= 15; i++) {
-            System.out.println("From a for loop. i = " + i);
-        }
+        //Exercise 1. Using for loop instead:
+//        for(int i = 5; i <= 15; i++) {
+//            System.out.println("From a for loop. i = " + i);
+//        }
+//
+//        for(int counter = 0; counter <= 100; counter += 2) {
+//            System.out.println("From a for loop, counting up to 100 by 2s. " + counter);
+//        }
+//
+//        for(int x = 100; x >= -10; x -=5) {
+//            System.out.println("For loop, counting backwards from 100 by 5s. " + x);
+//        }
+//
+//        for(int y = 1; y <= 16; y *=2) {
+//            int intResult = (int) Math.pow(2,y);
+//            System.out.println("Squares using for loop. " + intResult);
+//        }
 
-        for(int counter = 0; counter <= 100; counter += 2) {
-            System.out.println("From a for loop, counting up to 100 by 2s. " + counter);
-        }
-
-        for(int x = 100; x >= -10; x -=5) {
-            System.out.println("For loop, counting backwards from 100 by 5s. " + x);
-        }
-
-        for(int y = 1; y <= 16; y *=2) {
-            int intResult = (int) Math.pow(2,y);
-            System.out.println("Squares using for loop. " + intResult);
+        //Exercise 2
+        for(int i = 1; i <= 100; i++) {
+            if ((i % 5 == 0) && (i % 3 == 0)) {
+                System.out.println("FizzBuzz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else if (i % 3 == 0 ) {
+                System.out.println("Fizz");
+            } else {
+                System.out.println(i);
+            }
         }
 
     }
