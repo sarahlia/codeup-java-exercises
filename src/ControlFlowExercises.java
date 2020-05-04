@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
+
 //        int i = 5;
 //        while(i <= 15) {
-//            System.out.println("From a while loop. i = " + i);
+//            System.out.print(i + " ");
 //            i++;
 //        }
 //
@@ -26,6 +27,13 @@ public class ControlFlowExercises {
 //            System.out.println("Do-while loop. " + (int) Math.pow(2, y));
 //            y *= 2;
 //        } while (y <= 16);
+
+        //DOUGLAS WAY:
+//        long counter = 2L;
+//        do {
+//            System.out.println(counter);
+//            counter *= counter;
+//        } while(counter < 1000000L);
 
         //Exercise 1. Using for loop instead:
 //        for(int i = 5; i <= 15; i++) {
@@ -60,31 +68,58 @@ public class ControlFlowExercises {
 
         //Exercise 3
         Scanner sc = new Scanner(System.in);
-        System.out.println("What number would you like to go up to? Enter an integer:");
-        int userInput = Integer.parseInt(sc.nextLine());
-
-        System.out.println("Here is your table!");
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-
-        for(int i = 1; i <= userInput; i++) {
-            int square = (int) Math.pow(i, 2);
-            int cube = (int) Math.pow(i, 3);
+//        System.out.println("What number would you like to go up to? Enter an integer:");
+//        int userInput = Integer.parseInt(sc.nextLine());
+//
+//        System.out.println("Here is your table!");
+//        System.out.println("number | squared | cubed");
+//        System.out.println("------ | ------- | -----");
+//
+//        for(int i = 1; i <= userInput; i++) {
+//            int square = (int) Math.pow(i, 2);
+//            int cube = (int) Math.pow(i, 3);
 //            System.out.println(i);
 //            System.out.println(square);
-            System.out.printf("%1d      | %2d      | %3d      %n", i, square, cube);
-            System.out.println("Continue? [y/n]");
-            String userConfirm = sc.nextLine();
-            boolean confirmation = userConfirm.equals("y");
-            if (confirmation) {
-                continue;
-            } else {
-                break;
-            }
+//            System.out.printf("%1d      | %2d      | %3d      %n", i, square, cube);
+//            System.out.println("Continue? [y/n]");
+//            String userConfirm = sc.nextLine();
+//            boolean confirmation = userConfirm.equals("y");
+//            if (confirmation) {
+//                continue;
+//            } else {
+//                break;
+//            }
 
-        }
+//        }
 
         //Exercise 4
+    for (int i = 0; i <= 100; i++) {
+        System.out.println("Enter a numerical grade from 0 to 100:");
+
+        int inputGrade = Integer.parseInt(sc.nextLine());
+//        System.out.println(inputGrade);
+         if (inputGrade >= 88) {
+             System.out.println("The corresponding letter grade: A");
+         } else if (inputGrade >= 80) {
+             System.out.println("The corresponding letter grade: B");
+         } else if (inputGrade >= 67) {
+             System.out.println("The corresponding letter grade: C");
+         } else if (inputGrade >= 60) {
+             System.out.println("The corresponding letter grade: D");
+         } else {
+             System.out.println("The corresponding letter grade: F");
+         }
+
+         System.out.println("Continue? [y/n]");
+         String userConf = sc.nextLine();
+         boolean confirmation = userConf.equals("y");
+         if (confirmation) {
+             continue;
+         } else {
+             break;
+         }
+    }
+
 
 
     }
