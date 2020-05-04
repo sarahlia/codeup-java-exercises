@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
@@ -72,7 +73,18 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //            System.out.println(square);
             System.out.printf("%1d      | %2d      | %3d      %n", i, square, cube);
+            System.out.println("Continue? [y/n]");
+            String userConfirm = sc.nextLine();
+            boolean confirmation = userConfirm.equals("y");
+            if (confirmation) {
+                continue;
+            } else {
+                break;
+            }
+
         }
+
+        //Exercise 4
 
 
     }
