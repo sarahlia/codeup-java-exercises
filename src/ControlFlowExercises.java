@@ -52,10 +52,16 @@ public class ControlFlowExercises {
 //            int intResult = (int) Math.pow(2,y);
 //            System.out.println("Squares using for loop. " + intResult);
 //        }
+//
+        //DOUGLAS WAY:
+//        for(long counter = 2L; counter < 1000000; counter *= counter) {
+//            System.out.println(counter);
+//        }
 
         //Exercise 2
 //        for(int i = 1; i <= 100; i++) {
-//            if ((i % 5 == 0) && (i % 3 == 0)) {
+//            if (i % 15 == 0) {
+//           if ((i % 5 == 0) && (i % 3 == 0)) {  //or the previous line can be written like this
 //                System.out.println("FizzBuzz");
 //            } else if (i % 5 == 0) {
 //                System.out.println("Buzz");
@@ -67,7 +73,7 @@ public class ControlFlowExercises {
 //        }
 
         //Exercise 3
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
 //        System.out.println("What number would you like to go up to? Enter an integer:");
 //        int userInput = Integer.parseInt(sc.nextLine());
 //
@@ -92,34 +98,90 @@ public class ControlFlowExercises {
 
 //        }
 
+        //DOUGLAS' WAY
+//        Scanner scan = new Scanner(System.in);
+//
+//        boolean userContinues = true;
+//
+//        do {
+//            System.out.println("What number would you like to go up to?");
+//            int userInt = scan.nextInt(); //Integer.parseInt( sc.nextInt() ) is fine too here.
+//            System.out.println();
+//            System.out.println("Here is your table!");
+//            System.out.println();
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | -----");
+//            for(int i = 1; i <= userInt; i++) {
+//                System.out.format("%-6d", i);
+//                System.out.print(" | ");
+//                System.out.format("%-7d", i * i);
+//                System.out.print(" | ");
+//                System.out.print(i * i * i);
+//                System.out.println();
+//            }
+//            System.out.print("Would you like to enter another number (y/n) ");
+//            String userResponse = scan.next();
+//            if (!userResponse.equalsIgnoreCase("y")) {
+//                userContinues = false;
+//            }
+//        } while (userContinues);
+
         //Exercise 4
-    for (int i = 0; i <= 100; i++) {
-        System.out.println("Enter a numerical grade from 0 to 100:");
-
-        int inputGrade = Integer.parseInt(sc.nextLine());
+//    for (int i = 0; i <= 100; i++) {
+//        System.out.println("Enter a numerical grade from 0 to 100:");
+//
+//        int inputGrade = Integer.parseInt(sc.nextLine());
 //        System.out.println(inputGrade);
-         if (inputGrade >= 88) {
-             System.out.println("The corresponding letter grade: A");
-         } else if (inputGrade >= 80) {
-             System.out.println("The corresponding letter grade: B");
-         } else if (inputGrade >= 67) {
-             System.out.println("The corresponding letter grade: C");
-         } else if (inputGrade >= 60) {
-             System.out.println("The corresponding letter grade: D");
-         } else {
-             System.out.println("The corresponding letter grade: F");
-         }
+//         if (inputGrade >= 88) {
+//             System.out.println("The corresponding letter grade: A");
+//         } else if (inputGrade >= 80) {
+//             System.out.println("The corresponding letter grade: B");
+//         } else if (inputGrade >= 67) {
+//             System.out.println("The corresponding letter grade: C");
+//         } else if (inputGrade >= 60) {
+//             System.out.println("The corresponding letter grade: D");
+//         } else {
+//             System.out.println("The corresponding letter grade: F");
+//         }
+//
+//         System.out.println("Continue? [y/n]");
+//         String userConf = sc.nextLine();
+//         boolean confirmation = userConf.equals("y");
+//         if (confirmation) {
+//             continue;
+//         } else {
+//             break;
+//         }
+//    }
 
-         System.out.println("Continue? [y/n]");
-         String userConf = sc.nextLine();
-         boolean confirmation = userConf.equals("y");
-         if (confirmation) {
-             continue;
-         } else {
-             break;
-         }
-    }
-
+        //DOUGLAS' WAY
+//        Scanner scanner = new Scanner(System.in);
+//
+//        boolean anotherGrade = true;
+//
+//        do {
+//            System.out.println("Please enter a numerical grade from 0 to 100:");
+//
+//            int numericGrade = scanner.nextInt(); //.nextLine works too, with Integer.parseInt
+//
+//            if (numericGrade >= 88) {
+//                System.out.println("The corresponding letter grade: A");
+//            } else if (numericGrade >= 80) {
+//                System.out.println("The corresponding letter grade: B");
+//            } else if (numericGrade >= 67) {
+//                System.out.println("The corresponding letter grade: C");
+//            } else if (numericGrade >= 60) {
+//                System.out.println("The corresponding letter grade: D");
+//            } else {
+//                System.out.println("The corresponding letter grade: F");
+//            }
+//
+//            System.out.println("Do you want to enter a new grade?");
+//            String userResponse = scanner.next();
+//            if (!userResponse.equalsIgnoreCase("y")) {
+//                anotherGrade = false;
+//            }
+//        } while (anotherGrade);
 
 
     }
