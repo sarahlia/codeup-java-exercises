@@ -1,20 +1,23 @@
 import jdk.swing.interop.SwingInterOpUtils;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
-        while(true) {
-            System.out.println("Factorial test.");
-            factorial();
-            System.out.println("Do you want to continue? [y/n]");
-            String answer = sc.nextLine();
-            if(answer.toLowerCase().equals("n")) {
-                break;
-            }
-        }
+            rollDice(sc);
+
+//        while(true) {
+//            System.out.println("Factorial test.");
+//            factorial();
+//            System.out.println("Do you want to continue? [y/n]");
+//            String answer = sc.nextLine();
+//            if(answer.toLowerCase().equals("n")) {
+//                break;
+//            }
+//        }
 //        System.out.println(2 == sum(1, 1));
 //        System.out.println(0 == sum(-1, 1));
 //        System.out.println(0 != sum(-2, -5));
@@ -25,8 +28,8 @@ public class MethodsExercises {
 //        System.out.println("divide(69, 23) = " + divide(69, 23));
 //        System.out.println("modulus(13, 4) = " + modulus(13, 4));
 //        getInteger(1, 10);
-//        getFactorial(sc);
-        factorial();
+//        factorial();
+
     }
 
     public static double add(double num1, double num2) {
@@ -72,10 +75,10 @@ public class MethodsExercises {
         }
     }
 
-    //Exercise 2
+    //Exercise 2: Enter a valid number (between min & max)
     public static int getInteger(int min, int max) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter a number between 1 and 10: ");
+        System.out.println("Enter a number: ");
 //        int userInput = Integer.parseInt(scan.nextLine());
         int userInput = scan.nextInt();
 
@@ -96,6 +99,7 @@ public class MethodsExercises {
         long userInput = getInteger(1, 10);
         long result = 1;
         System.out.println("userInput = " + userInput);
+
         for (long i = userInput; i >= 1; i--) {
             result = result * i;
         }
@@ -103,10 +107,25 @@ public class MethodsExercises {
 
         }
 
+    //Exercise 4
+    public static void rollDice(Scanner sc) {
 
+        while(true) {
+//            System.out.println("rollDice test"); //Not really necessary, but a good note to indicate where we are.
 
+            System.out.println("Enter the number of sides: ");
+            short sides = Short.parseShort(sc.nextLine());
+            int range = sides - 1 + 1;
+            System.out.println("roll dice 1 = " + ((int) (Math.random() * range) + 1));
+            System.out.println("roll dice 2 = " + ((int) (Math.random() * range) + 1));
 
+            System.out.println("Do you wish to continue? y/n");
+            if (sc.nextLine().toLowerCase().equals("n")) {
+                break;
+            }
+        }
 
+    }
 
 
 }
