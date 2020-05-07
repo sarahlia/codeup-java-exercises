@@ -2,11 +2,11 @@ public class Person {
     private String name;
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String newName) {
-        name = newName;
+        this.name = newName;
     }
 
     public void sayHello() {
@@ -20,6 +20,9 @@ public class Person {
     public static void main(String[] args) {
         Person p1 = new Person("Sarah");
         System.out.println(p1.getName());
+        p1.setName("fernando");
+        p1.sayHello();
+
     }
 
 }
