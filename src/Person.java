@@ -1,6 +1,12 @@
 public class Person {
     private String name;
 
+    //constructor
+    public Person(String personName) {
+        this.name = personName;
+        // or: setName(newName);
+    }
+
     public String getName() {
         return this.name;
     }
@@ -10,11 +16,8 @@ public class Person {
     }
 
     public void sayHello() {
-        System.out.println("Hello there, " + name + "!");
-    }
-
-    public Person(String personName) {
-        this.name = personName;
+        System.out.println("Hello there, " + this.name + "!");
+        System.out.println("Hello there, " + getName() + "!"); //same thing as above
     }
 
     public static void main(String[] args) {
