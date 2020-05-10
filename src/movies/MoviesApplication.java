@@ -17,44 +17,48 @@ public class MoviesApplication {
             System.out.println("5 - view movies in the scifi category");
 
             Input input = new Input();
-            int userResponse = input.getInt(0, 5);
+//            int userResponse = input.getInt(0, 5);
+            String resp = input.getString();
 
-            if (userResponse == 1) {
+            if (resp.equals("1")) {
                 for (Movie movie : MoviesArray.findAll()) {
-                    System.out.println(movie.getName());
+                    System.out.println(movie.getName()+ " -- " + movie.getCategory());
                 }
                 continue;
-            } else if (userResponse == 2) {
+            } else if (resp.equals("2")) {
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("animated")) {
                         System.out.println(movie.getName());
                     }
                 }
                 continue;
-            } else if (userResponse == 3) {
+            } else if (resp.equals("3")) {
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("drama")) {
                         System.out.println(movie.getName());
                     }
                 }
                 continue;
-            } else if (userResponse == 4) {
+            } else if (resp.equals("4")) {
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("horror")) {
                         System.out.println(movie.getName());
                     }
                 }
                 continue;
-            } else if (userResponse == 5) {
+            } else if (resp.equals("5")) {
                 for (Movie movie : MoviesArray.findAll()) {
                     if (movie.getCategory().equals("scifi")) {
                         System.out.println(movie.getName());
                     }
                 }
                 continue;
-            } else {
+            } else if (resp.equals("0")) {
                 System.out.println("Goodbye!");
                 break;
+            } else {
+                System.out.println("Not a valid number choice, try again.");
+                continue;
             }
         }
 
