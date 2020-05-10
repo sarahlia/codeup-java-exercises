@@ -7,22 +7,28 @@ public class ServerNameGenerator {
 
     Random random = new Random();
 
-    public String getRandomAdjective() {
-        int indexAdj = random.nextInt(adjectives.length);
-        return adjectives[indexAdj];
-    }
+//    public String getRandomAdjective() {
+//        int indexAdj = random.nextInt(adjectives.length);
+//        return adjectives[indexAdj];
+//    }
+//
+//    public String getRandomNoun() {
+//        int indexNoun = random.nextInt(nouns.length);
+//        return nouns[indexNoun];
+//    }
 
-    public String getRandomNoun() {
+    public String getRandomElement() {
+        int indexAdj = random.nextInt(adjectives.length);
         int indexNoun = random.nextInt(nouns.length);
-        return nouns[indexNoun];
+        return adjectives[indexAdj] + "-" + nouns[indexNoun];
     }
 
     public static void main(String[] args) {
         System.out.println("Here is your server name: ");
         ServerNameGenerator s1 = new ServerNameGenerator();
-        System.out.println(s1.getRandomAdjective() + "-" + s1.getRandomNoun());
+//        System.out.println(s1.getRandomAdjective() + "-" + s1.getRandomNoun());
+        System.out.println(s1.getRandomElement());
     }
-
 
 }
 
