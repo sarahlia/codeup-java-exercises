@@ -8,10 +8,10 @@ public class Circle {
     //constructor
     public Circle(double aRadius) {
         this.radius = aRadius;
-        counter++;
+        counter++; //bonus only
     }
 
-    //bonus: create a getCount method
+    //bonus only: create a getCount method
     public static int getCount() {
         return counter++;
     }
