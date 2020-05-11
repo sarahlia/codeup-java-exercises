@@ -18,6 +18,7 @@ public class MoviesApplication {
 //            System.out.println(movie.getName());
 //        }
 
+        //see Douglas' lecture notes for how he did this one.
         while(true) {
             System.out.println("What would you like to do ?\n ");
             System.out.println("0 - exit");

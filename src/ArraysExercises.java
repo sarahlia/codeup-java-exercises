@@ -6,47 +6,26 @@ public class ArraysExercises {
 //        int[] numbers = {1, 2, 3, 4, 5};
 //        System.out.println(Arrays.toString(numbers));
 
-//        Person sarah = new Person("Sarah");
-//        Person laura = new Person("Laura");
-//        Person michael = new Person("Michael");
-//        Person joanne = new Person("Joanne");
-//
-//        Person[] people = new Person[3];
-//
-//        people[0] = sarah;
-//        people[1] = laura;
-//        people[2] = michael;
+        Person[] people = new Person[3];
+        //        Person[] people = {new Person ("Laura"), new Person ("Maureen"), new Person ("Michael") };
 
-        Person[] people = {new Person ("Laura"), new Person ("Maureen"), new Person ("Michael") };
+        people[0] = new Person("Maureen");
+        people[1] = new Person("Laura");
+        people[2] = new Person("Michael");
+
 
         for (Person person : people) {
             System.out.println(person.getName());
         }
 
-//        people = Arrays.copyOf(people, people.length + 1);
-//        System.out.println(people);
-//        System.out.println(Arrays.toString(people));
+//Adding joanne to the array:
 
-//Example of adding joanne to the 'people' array:
-//        people[3] = joanne;
-//        for (Person person : people) {
-//            String name = person.getName();
-//            System.out.println(name);
-//        }
-//
-//        Person who = people[people.length - 1];
-//        System.out.println(who.toString());
-
-//        System.out.println(people[0].getName());
-//        System.out.println(Arrays.toString(people));
-
-        Person[] morePeople = addPerson(people, new Person("Sarah"));
+        Person[] morePeople = addPerson(people, new Person("Joanne"));
 
         for (Person person : morePeople) {
             System.out.println(person.getName());
         }
 
-//        System.out.println( addPerson(people, new Person("Sarah")) );
     }
 
     public static Person[] addPerson(Person[] arr, Person obj) {
@@ -55,7 +34,15 @@ public class ArraysExercises {
         return result;
     }
 
-
-
+//    Douglas' way (see his lecture notes)
+//        public static Person[] addPerson(Person[] people, Person obj) {
+//            Person[] newPeopleArray = new Person[people.length + 1];
+//
+//            for (int i = 0; i < people.length; i++) {
+//                newPeopleArray[i] = people[i];
+//            }
+//            newPeopleArray[newPeopleArray.length - 1] = obj;
+//            return newPeopleArray;
+//        }
 
 }

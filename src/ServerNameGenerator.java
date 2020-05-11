@@ -5,19 +5,17 @@ public class ServerNameGenerator {
     String[] adjectives = {"lazy", "sleepy", "grouchy", "handsome", "beautiful", "stinky", "happy", "sad", "shy", "arrogant"};
     String[] nouns = {"lion", "tiger", "bear", "pig", "sister", "brother", "mother", "father", "teacher", "student"};
 
-    Random random = new Random();
+    //Douglas' way (see his lecture)
+//    public static String getWord(String choices) {
+//    Random random = new Random();
+//    int randomNumber = random.nextInt(choices.length);
+//    return choices[randomNumber];
+//    }
 
-//    public String getRandomAdjective() {
-//        int indexAdj = random.nextInt(adjectives.length);
-//        return adjectives[indexAdj];
-//    }
-//
-//    public String getRandomNoun() {
-//        int indexNoun = random.nextInt(nouns.length);
-//        return nouns[indexNoun];
-//    }
 
     public String getRandomElement() {
+        Random random = new Random();
+
         int indexAdj = random.nextInt(adjectives.length);
         int indexNoun = random.nextInt(nouns.length);
         return adjectives[indexAdj] + "-" + nouns[indexNoun];
