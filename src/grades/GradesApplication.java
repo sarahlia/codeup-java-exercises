@@ -1,11 +1,14 @@
 package grades;
 
+import util.Input;
+
 import java.util.HashMap;
 
 public class GradesApplication {
 
+    static HashMap<String, Student> students = new HashMap<>();
+
     public static void main(String[] args) {
-        HashMap<String, Student> students = new HashMap<>();
 
         Student michael = new Student("michael");
         michael.addGrade(80);
@@ -42,5 +45,42 @@ public class GradesApplication {
             System.out.printf("The name of the student with the github username %s is %s and his/her average grade is %.1f%n", username, actualName, avgGrade);
         }
 
+        showUsernames();
     }
+        //Exercise 3
+
+        public static void showUsernames() {
+
+            System.out.println("Welcome!");
+            System.out.println("Here are the GitHub usernames of our students:");
+            for (String username : students.keySet()) {
+                System.out.printf("|%s| ", username);
+
+            }
+            System.out.println("\nWhat student would you like to see more information on?");
+
+            while(true) {
+                Input input = new Input();
+                String resp = input.getString();
+
+
+                for (String username : students.keySet()) {
+                    String actualName = students.get(username).getName();
+                    double avgGrade = students.get(username).getGradeAverage();
+
+                    if (resp.equalsIgnoreCase(username)) {
+                        System.out.println(username + "'s actual name is " + actualName + " and his/her average grade is: " + avgGrade);
+                        break;
+                    } else {
+                        System.out.println("Sorry, no student found with the GitHub username of " + resp);
+                        continue;
+                    }
+                }
+//                continue;
+            }
+        }
+
+
+
+
 }
