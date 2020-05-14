@@ -43,6 +43,7 @@ public class Student {
 
         System.out.println("joanne.grades = " + joanne.grades);
         System.out.println("joanne.getGradeAverage() = " + joanne.getGradeAverage());
+        System.out.println(joanne.getGradeAverage() == 95); //to check against expected value
 
     }
 

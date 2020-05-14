@@ -6,9 +6,9 @@ import java.util.HashMap;
 
 public class GradesApplication {
 
-    static HashMap<String, Student> students = new HashMap<>();
-
+    static Input input = new Input();
     public static void main(String[] args) {
+        HashMap<String, Student> students = new HashMap<>();
 
         Student michael = new Student("michael");
         michael.addGrade(80);
@@ -45,42 +45,35 @@ public class GradesApplication {
             System.out.printf("The name of the student with the github username %s is %s and his/her average grade is %.1f%n", username, actualName, avgGrade);
         }
 
-        showUsernames();
+        cli(students);
     }
         //Exercise 3
-
-        public static void showUsernames() {
-
+        public static void cli(HashMap<String, Student> students) {
             System.out.println("Welcome!");
             System.out.println("Here are the GitHub usernames of our students:");
             for (String username : students.keySet()) {
                 System.out.printf("|%s| ", username);
-
             }
-            System.out.println("\nWhat student would you like to see more information on?");
 
-            while(true) {
-                Input input = new Input();
-                String resp = input.getString();
-
-
+            do{
                 for (String username : students.keySet()) {
                     String actualName = students.get(username).getName();
-                    double avgGrade = students.get(username).getGradeAverage();
-
-                    if (resp.equalsIgnoreCase(username)) {
-                        System.out.println(username + "'s actual name is " + actualName + " and his/her average grade is: " + avgGrade);
-                        break;
-                    } else {
-                        System.out.println("Sorry, no student found with the GitHub username of " + resp);
-                        continue;
-                    }
+//                    double avgGrade = students.get(username).getGradeAverage();
+//                    System.out.println(username + "'s actual name is " + actualName + " and his/her average grade is: ");
+//                    System.out.printf("|%s| ", username);
                 }
-//                continue;
-            }
+                System.out.println("\nWhat student would you like to see more information on?");
+
+                String resp = input.getString();
+                if(students.containsKey(resp)) {
+                    System.out.printf("Name: %s - Github username: %s and average grade: %.2f", students.get(resp).getName(), resp, students.get(resp).getGradeAverage() );
+                } else {
+                    System.out.println("Sorry, no student found.");
+                }
+                System.out.println("\nWould you like to see another student?");
+
+            } while(input.yesNo());
         }
-
-
 
 
 }
