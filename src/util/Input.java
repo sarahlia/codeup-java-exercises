@@ -29,13 +29,18 @@ public class Input {
 
     public int getInt() {
         System.out.println("Give me an integer: ");
-        return Integer.parseInt(scanner.nextLine());
+        return Integer.valueOf(scanner.nextLine());
 
     }
 
     public double getDouble(double min, double max) {
         System.out.println("Give me a decimal between " + min + " and " + max);
-        double aDecimal = Double.parseDouble(scanner.nextLine());
+        double aDecimal;
+        try {
+            aDecimal = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            return getDouble(min, max);
+        }
         if (aDecimal < min || aDecimal > max) {
             System.out.println("Number is outside of the range, try again.");
             return getDouble(min, max);
@@ -45,7 +50,11 @@ public class Input {
 
     public double getDouble() {
         System.out.println("Give me a decimal: ");
-        return Double.parseDouble(scanner.nextLine());
+        try {
+            return Double.valueOf(scanner.nextLine());
+        } catch(NumberFormatException e) {
+            return getDouble();
+        }
     }
 
 }
