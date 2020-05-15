@@ -51,28 +51,24 @@ public class GradesApplication {
         public static void cli(HashMap<String, Student> students) {
             System.out.println("Welcome!");
             System.out.println("Here are the GitHub usernames of our students:");
-            for (String username : students.keySet()) {
-                System.out.printf("|%s| ", username);
-            }
 
             do{
                 for (String username : students.keySet()) {
-                    String actualName = students.get(username).getName();
-//                    double avgGrade = students.get(username).getGradeAverage();
-//                    System.out.println(username + "'s actual name is " + actualName + " and his/her average grade is: ");
-//                    System.out.printf("|%s| ", username);
+                    System.out.printf("|%s| ", username);
                 }
+
                 System.out.println("\nWhat student would you like to see more information on?");
 
                 String resp = input.getString();
                 if(students.containsKey(resp)) {
                     System.out.printf("Name: %s - Github username: %s and average grade: %.2f", students.get(resp).getName(), resp, students.get(resp).getGradeAverage() );
                 } else {
-                    System.out.println("Sorry, no student found.");
+                    System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
                 }
                 System.out.println("\nWould you like to see another student?");
 
             } while(input.yesNo());
+            System.out.println("Goodbye, and have a wonderful day!");
         }
 
 
