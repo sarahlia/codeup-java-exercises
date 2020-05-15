@@ -13,13 +13,18 @@ public class Input {
 
     public boolean yesNo() {
         System.out.println("Select y/n");
-        String answer = scanner.nextLine();
+        String answer = scanner.nextLine(); //this.getString() can replace scanner.nextLine()
         return answer.equals("y") ? true: false;
     }
 
     public int getInt(int min, int max) {
         System.out.println("Give me a number between " + min + " and " + max + ":");
-        int aNumber = Integer.parseInt(scanner.nextLine());
+        int aNumber;
+        try{
+            aNumber = Integer.valueOf(scanner.nextLine());
+        }catch(NumberFormatException e) {
+            return getInt(min, max);
+        }
         if (aNumber < min || aNumber > max) {
             System.out.println("Number is outside of the range, try again.");
             return getInt(min, max);
@@ -37,7 +42,7 @@ public class Input {
         System.out.println("Give me a decimal between " + min + " and " + max);
         double aDecimal;
         try {
-            aDecimal = Double.parseDouble(scanner.nextLine());
+            aDecimal = Double.valueOf(scanner.nextLine());
         } catch (NumberFormatException e) {
             return getDouble(min, max);
         }
