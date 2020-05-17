@@ -6,25 +6,29 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
 
+    //constructor
     public String getString() {
-        System.out.println("Enter something:");
-        return scanner.nextLine();
+        return this.getString("Type something"); //this.getString() can replace scanner.nextLine()
     }
 
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextLine();
+    }
     public boolean yesNo() {
         System.out.println("Select y/n");
-        String answer = scanner.nextLine(); //this.getString() can replace scanner.nextLine()
-        return answer.equals("y") ? true: false;
+        String answer = scanner.nextLine();
+        return answer.equalsIgnoreCase("y") ? true: false;
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Give me a number between " + min + " and " + max + ":");
         int aNumber;
         try{
-            aNumber = Integer.valueOf(scanner.nextLine());
+            aNumber = Integer.valueOf(this.getString("Give me a number between " + min + " and " + max + ":"));
         }catch(NumberFormatException e) {
             return getInt(min, max);
         }
+
         if (aNumber < min || aNumber > max) {
             System.out.println("Number is outside of the range, try again.");
             return getInt(min, max);
@@ -33,19 +37,21 @@ public class Input {
     }
 
     public int getInt() {
-        System.out.println("Give me an integer: ");
-        return Integer.valueOf(scanner.nextLine());
-
+        try {
+            return Integer.valueOf(this.getString("Give me an integer: "));
+        } catch (NumberFormatException e) {
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
-        System.out.println("Give me a decimal between " + min + " and " + max);
         double aDecimal;
         try {
-            aDecimal = Double.valueOf(scanner.nextLine());
+            aDecimal = Double.valueOf(this.getString("Give me a decimal between " + min + " and " + max + ": "));
         } catch (NumberFormatException e) {
             return getDouble(min, max);
         }
+
         if (aDecimal < min || aDecimal > max) {
             System.out.println("Number is outside of the range, try again.");
             return getDouble(min, max);
@@ -54,12 +60,12 @@ public class Input {
     }
 
     public double getDouble() {
-        System.out.println("Give me a decimal: ");
         try {
-            return Double.valueOf(scanner.nextLine());
+            return Double.valueOf(this.getString("Give me a decimal: "));
         } catch(NumberFormatException e) {
             return getDouble();
         }
+
     }
 
 }
