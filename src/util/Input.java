@@ -6,7 +6,6 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
 
-    //constructor
     public String getString() {
         return this.getString("Type something"); //this.getString() can replace scanner.nextLine()
     }
