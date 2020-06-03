@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class GroceryApp {
 
-    static ArrayList<String> groceries;
+    static ArrayList<Item> groceries;
 
     static Input input = new Input();
     static Scanner scanner = new Scanner(System.in);
@@ -15,7 +15,9 @@ public class GroceryApp {
 
     public static void main(String[] args) {
         groceries = new ArrayList<>();
+        System.out.println(groceries);
 
+        System.out.println("Welcome to Green Grocer! Enjoy a free container of Clorox Wipes with your purchase today.");
         System.out.println("Do you want to create a grocery list?");
         while(input.yesNo()) {
             itemPrompt();
@@ -57,15 +59,17 @@ public class GroceryApp {
     }
 
     public static void addItem() {
-        System.out.println("Type an item to add to your cart.");
-        String item = scanner.nextLine();
-        groceries.add(item);
+        groceries.add(new Item("clorox wipes", 1));
+        System.out.println("Type an item to add to your groceries cart.");
+        String name = scanner.nextLine();
+//        groceries.add(name);
 
         System.out.println("How many?");
-        String qty = scanner.nextLine();
-        System.out.println("You have added " + qty + " " + item +"(s)");
+        int qty = Integer.parseInt(scanner.nextLine());
+        groceries.add(new Item(name, qty));
+        System.out.println("You have added " + qty + " " + name +"(s)");
 
-        System.out.println("Item(s) in your cart: " + groceries);
+        System.out.println("Item(s) in your groceries cart: " + groceries.toString());
     }
 
     public static void listOptions() {
