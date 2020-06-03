@@ -9,14 +9,13 @@ public class GroceryList {
 
     static Input input = new Input();
 
+    static ArrayList<String> groceries;
+//            = new ArrayList<>();
+
     public static void main(String[] args) {
-//        ArrayList<GroceryList> groceries = new ArrayList<>();
-        ArrayList<String> groceries = new ArrayList<>();
+        groceries = new ArrayList<>();
 //        GroceryList apple = new GroceryList();
 //        GroceryList pepsi = new GroceryList();
-
-        groceries.add("apple");
-        groceries.add("pepsi");
 
         System.out.println(groceries);
 
@@ -27,7 +26,7 @@ public class GroceryList {
             String inp = scanner.nextLine();
 
             if(inp.toLowerCase().equals("y")) {
-                newItem();
+                itemPrompt();
                 break;
             } else if(inp.toLowerCase().equals("n")) {
                 exit();
@@ -41,7 +40,7 @@ public class GroceryList {
 
     }
 
-    public static void newItem() {
+    public static void itemPrompt() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Do you want to enter a new item?");
@@ -51,22 +50,19 @@ public class GroceryList {
             System.out.println("2 - drinks");
             System.out.println("3 - Exit");
 
-            String resp = input.getString();
-            if(resp.equals("1")) {
-                input.getString("Type name of the item: ");
-                System.out.println("How many?");
-                String qty = scanner.nextLine();
-                System.out.println("You have added " + qty + " item(s)." );
+            String inp = scanner.nextLine();
+//            String resp = input.getString();
+            if(inp.equals("1")) {
+                addItem();
+
                 listOptions();
 
-            } else if(resp.equals("2")) {
-                input.getString("Type name of the item: ");
-                System.out.println("How many?");
-                String qty = scanner.nextLine();
-                System.out.println("You have added " + qty + " item(s)." );
+            } else if(inp.equals("2")) {
+                addItem();
+
                 listOptions();
 
-            } else if(resp.equals("3")) {
+            } else if(inp.equals("3")) {
                 exit();
                 break;
             } else {
@@ -86,11 +82,25 @@ public class GroceryList {
         if(resp.equals("1")) {
 //            finalizeList();
         } else if(resp.equals("2")) {
-//            addItem();
+            addItem();
+            listOptions();
         } else {
             System.out.println("Invalid input.");
             listOptions();
         }
+    }
+
+    public static void addItem() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type an item to add to your cart.");
+        String item = scanner.nextLine();
+        groceries.add(item);
+
+        System.out.println("How many?");
+        String qty = scanner.nextLine();
+        System.out.println("You have added " + qty + " " + item +"(s)");
+
+        System.out.println("Item(s) in your cart: " + groceries);
     }
 
     public static void exit() {
