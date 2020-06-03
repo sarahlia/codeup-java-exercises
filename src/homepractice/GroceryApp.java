@@ -12,10 +12,10 @@ public class GroceryApp {
     static Input input = new Input();
     static Scanner scanner = new Scanner(System.in);
 
-
     public static void main(String[] args) {
         groceries = new ArrayList<>();
-        System.out.println(groceries);
+        groceries.add(new Item("clorox wipes", 1));
+//        System.out.println(groceries);
 
         System.out.println("Welcome to Green Grocer! Enjoy a free container of Clorox Wipes with your purchase today.");
         System.out.println("Do you want to create a grocery list?");
@@ -24,9 +24,7 @@ public class GroceryApp {
             break;
         }
 
-
     }
-
 
     public static void itemPrompt() {
         System.out.println("Do you want to enter a new item?");
@@ -39,30 +37,21 @@ public class GroceryApp {
             int inp = input.getInt(1, 3);
             if(inp == 1) {
                 addItem();
-//
                 listOptions();
-
             } else if(inp == 2) {
                 addItem();
-//
                 listOptions();
-
             } else if(inp == 3) {
-//                exit();
                 break;
             }
-//            else {
-//                break;
-//            }
+
         }
 
     }
 
     public static void addItem() {
-        groceries.add(new Item("clorox wipes", 1));
         System.out.println("Type an item to add to your groceries cart.");
         String name = scanner.nextLine();
-//        groceries.add(name);
 
         System.out.println("How many?");
         int qty = Integer.parseInt(scanner.nextLine());
