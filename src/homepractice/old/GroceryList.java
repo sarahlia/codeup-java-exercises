@@ -1,4 +1,4 @@
-package homepractice;
+package homepractice.old;
 
 import util.Input;
 
