@@ -9,31 +9,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     if(request.getMethod().equalsIgnoreCase("post")) {
-        if(request.getParameter("username").equalsIgnoreCase("admin") && request.getParameter("password").equalsIgnoreCase("password")) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("admin") && password.equals("password")) {
             response.sendRedirect("/profile.jsp");
         }
     }
 %>
 
 <html>
+
 <head>
-    <title>Login Page</title>
+    <%-- Another way to do include. Can be with or without closing jsp tag. --%>
+    <jsp:include page="partials/head.jsp">
+        <jsp:param name="title" value="Please Log In"/>
+    </jsp:include>
 </head>
 
 <body>
-    <%@include file="partials/navbar.jsp"%>
+<%@include file="partials/navbar.jsp"%>
 
+<div class="container">
+    <h3>Please Log In</h3>
     <form action="/login.jsp" method="post">
-        <div>
+        <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username">
         </div>
-        <div>
+        <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
         </div>
         <input type="submit">
     </form>
+</div>
 </body>
 
 </html>

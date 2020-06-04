@@ -1,3 +1,9 @@
 <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Sarah's Navbar</span>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/ads">Sarah's Adlister</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/profile.jsp">Profile</a></li>
+        <li><a href="/login.jsp">Login</a></li>
+    </ul>
 </nav>
