@@ -21,17 +21,19 @@
 </head>
 
 <body>
-<form action="/login.jsp" method="post">
-    <div>
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password">
-    </div>
-    <input type="submit">
-</form>
+    <%@include file="partials/navbar.jsp"%>
+
+    <form action="/login.jsp" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <input type="submit">
+    </form>
 </body>
 
 </html>
