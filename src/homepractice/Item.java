@@ -26,8 +26,8 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public String toString() {
-        return this.name + "--quantity: " + this.quantity;
-    }
+//    public String toString() {
+//        return this.name + "--quantity: " + this.quantity;
+//    }
 }
 

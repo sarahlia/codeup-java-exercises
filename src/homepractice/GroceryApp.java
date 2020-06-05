@@ -31,7 +31,7 @@ public class GroceryApp {
         while(input.yesNo()) {
             System.out.println("Select a category: ");
             System.out.println("1 - food");
-            System.out.println("2 - beverage");
+            System.out.println("2 - cleaning products");
             System.out.println("3 - Exit");
 
             int inp = input.getInt(1, 3);
