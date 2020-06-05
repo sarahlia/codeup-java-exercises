@@ -5,6 +5,7 @@ public class Item {
     protected String name;
     protected int quantity;
 
+
     public Item(String name, int quantity) {
         this.name = name;
         this.quantity = quantity;
@@ -26,8 +27,8 @@ public class Item {
         this.quantity = quantity;
     }
 
-//    public String toString() {
-//        return this.name + "--quantity: " + this.quantity;
-//    }
+    public String toString() {
+        return this.name + "--quantity: " + this.quantity;
+    }
 }
 

@@ -2,8 +2,11 @@ package homepractice;
 
 public class Cleaner extends Item{
 
-    public Cleaner(String name, int quantity) {
+    protected double price;
+
+    public Cleaner(String name, int quantity, double price) {
         super(name, quantity);
+        this.price = price;
     }
 
 //    public String getName() {
@@ -22,7 +25,12 @@ public class Cleaner extends Item{
 //        this.quantity = quantity;
 //    }
 
-//    public String toString() {
-//        return this.name + "--" + this.quantity;
-//    }
+    public String toString() {
+        return this.name + "--quantity: " + this.quantity + "--price:$" + this.price;
+    }
+
+    public static void main(String[] args) {
+        Cleaner windex = new Cleaner("windex", 1, 4.99);
+        System.out.println(windex);
+    }
 }
