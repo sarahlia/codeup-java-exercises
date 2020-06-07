@@ -1,14 +1,14 @@
 package homepractice;
 
-import homepractice.Item;
+import java.util.ArrayList;
 
 public class Food extends Item {
 
-    protected double price;
+    protected ArrayList<Double> prices;
 
-    public Food(String name, int quantity, double price) {
+    public Food(String name, int quantity) {
         super(name, quantity);
-        this.price = price;
+        this.prices = new ArrayList<>();
     }
 
     public String getName() {
@@ -27,12 +27,28 @@ public class Food extends Item {
         this.quantity = quantity;
     }
 
+    public void addPrice(double price) {
+        this.prices.add(price);
+    }
+
     public double getPrice() {
-        return price;
+        double aPrice = 0;
+        for (double price: this.prices) {
+            aPrice = price;
+        }
+        return aPrice;
+    }
+
+    public double getTotalPrice() {
+        double aPrice = 0;
+        for (double price: this.prices) {
+            aPrice = aPrice + price;
+        }
+        return aPrice;
     }
 
     public String toString() {
-        return this.name + "--quantity: " + this.quantity + "--price:$" + this.price;
+        return this.name + "--quantity: " + this.quantity + "--price:$" + this.prices;
     }
 
     public static void main(String[] args) {

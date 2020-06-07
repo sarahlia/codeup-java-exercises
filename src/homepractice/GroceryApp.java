@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class GroceryApp {
 
     static ArrayList<Item> groceries;
+    static ArrayList<Food> availableItems;
+
 
     static Input input = new Input();
     static Scanner scanner = new Scanner(System.in);
@@ -17,20 +19,28 @@ public class GroceryApp {
         groceries.add(new Item("clorox wipes", 1));
 //        System.out.println(groceries);
 
-        ArrayList<Item> availableItems = new ArrayList<>();
-        Item rice = new Food("rice", 1, 19.99);
-        Item sugar = new Food("sugar", 1, 5.00);
-        Item brownie = new Food("brownie", 1, 2.25);
-        Item cookie = new Food("cookie", 1, 1.50);
-        Item water = new Food("water", 1, 3.49);
-        Item pepsi = new Food("pepsi", 1, 1.00);
-        availableItems.add(rice);
-        availableItems.add(sugar);
-        availableItems.add(brownie);
-        availableItems.add(cookie);
-        availableItems.add(water);
+        availableItems = new ArrayList<>();
+//        Food rice = new Food("rice", 1, 19.99);
+        Food rice = new Food("rice", 1);
+//        Food sugar = new Food("sugar", 1, 5.00);
+        Food sugar = new Food("sugar", 1);
+//        Food brownie = new Food("brownie", 1, 2.25);
+        Food brownie = new Food("brownie", 1);
+//        Food cookie = new Food("cookie", 1, 1.50);
+        Food cookie = new Food("cookie", 1);
+//        Food water = new Food("water", 1, 3.49);
+        Food water = new Food("water", 1);
+//        Food pepsi = new Food("pepsi", 1, 1.00);
+        Food pepsi = new Food("pepsi", 1);
+        pepsi.addPrice(1.00);
+
+//        availableItems.add(rice);
+//        availableItems.add(sugar);
+//        availableItems.add(brownie);
+//        availableItems.add(cookie);
+//        availableItems.add(water);
         availableItems.add(pepsi);
-//        System.out.println(availableItems);
+        System.out.println(availableItems);
 
 
         System.out.println("Welcome to Green Grocer! Enjoy a free container of Clorox Wipes with your purchase today.");
@@ -76,15 +86,15 @@ public class GroceryApp {
         System.out.println("How many?");
         int qty = Integer.parseInt(scanner.nextLine());
 
-//        if(name.equalsIgnoreCase().name.getName) {
-//            System.out.println("correct");
-//        }
-
+        if (availableItems.contains(name)) {
+            System.out.println("You have added " + qty + " " + name +"(s)");
+//            System.out.println("The price of " + qty + " " + name +"(s) is: $" + );
+        }
 //        for(Item grocery:groceries) {
 //            grocery.
 //        }
 //        groceries.add(new Food(name, qty));
-        System.out.println("You have added " + qty + " " + name +"(s)");
+//        System.out.println("You have added " + qty + " " + name +"(s)");
 
         System.out.println("Item(s) in your groceries cart: " + groceries.toString());
     }
