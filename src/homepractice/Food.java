@@ -27,12 +27,18 @@ public class Food extends Item {
         this.quantity = quantity;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
     public String toString() {
         return this.name + "--quantity: " + this.quantity + "--price:$" + this.price;
     }
 
     public static void main(String[] args) {
-        Food rice = new Food("rice", 1, 19.99);
-        System.out.println(rice);
+//        Food rice = new Food("rice", 1, 19.99);
+//        System.out.println(rice);
+//        System.out.println(rice.getName());
+
     }
 }
