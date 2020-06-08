@@ -1,22 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: sarahlianainggolan
-  Date: 6/4/20
-  Time: 11:44 AM
-  To change this template use File | Settings | File Templates.
+  Moved all the logic to the servlet(LoginServlet.java)
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    if(request.getMethod().equalsIgnoreCase("post")) {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        if (username.equals("admin") && password.equals("password")) {
-            response.sendRedirect("/profile.jsp");
-        }
-    }
-%>
-
 <html>
 
 <head>
@@ -31,7 +17,7 @@
 
 <div class="container">
     <h3>Please Log In</h3>
-    <form action="/login.jsp" method="post">
+    <form action="/login" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username">
