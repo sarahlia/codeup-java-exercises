@@ -5,5 +5,6 @@
     <ul class="nav navbar-nav navbar-right">
         <li><a href="/profile.jsp">Profile</a></li>
         <li><a href="/login.jsp">Login</a></li>
+        <li><a href="/logout.jsp">Logout</a></li>
     </ul>
 </nav>
