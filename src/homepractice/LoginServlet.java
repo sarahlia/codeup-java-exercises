@@ -22,6 +22,11 @@ public class LoginServlet extends HttpServlet{
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //if a person is logged in, they go to the profile page
+        if( request.getSession().getAttribute("user") != null ) {
+            response.sendRedirect("/profile");
+        }
+
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
