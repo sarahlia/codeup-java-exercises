@@ -7,13 +7,13 @@
 
 <head>
     <%-- Another way to do include. Can be with or without closing jsp tag. --%>
-    <jsp:include page="partials/head.jsp">
+    <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
 </head>
 
 <body>
-<%@include file="partials/navbar.jsp"%>
+<%@include file="/WEB-INF/partials/navbar.jsp"%>
 
 <div class="container">
     <h3>Please Log In</h3>
