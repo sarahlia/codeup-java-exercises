@@ -13,9 +13,13 @@ public class LoginServlet extends HttpServlet{
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        //when a user successfully logs in, set a key named "user"
         if (username.equals("admin") && password.equals("password")) {
+            request.getSession().setAttribute("user", username);
+            //successfully logged in user goes to profile page
             response.sendRedirect("/profile");
         } else {
+            //redirect unauthorized users to the login page (vs. profile page)
             response.sendRedirect("/login");
         }
 
