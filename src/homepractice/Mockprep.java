@@ -25,5 +25,26 @@ public class Mockprep {
             }
         }
 
+        //call countToThirtyFive method
+        countToThirtyFive();
+
+        //call countTo method
+        countTo(17);
+
     }
+
+    //Write a Java for loop method that prints out 0 to 35 when called
+    public static void countToThirtyFive() {
+        for(int i = 0; i <= 35; i++) {
+            System.out.println(i);
+        }
+    }
+
+    //Write a Java method that takes in a parameter and counts up to that parameter
+    public static void countTo(int param) {
+        for(int i = 0; i <= param; i++) {
+            System.out.println(i);
+        }
+    }
+
 }
