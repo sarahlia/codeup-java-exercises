@@ -2,6 +2,7 @@ package homepractice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Mockprep {
     public static void main(String[] args) {
@@ -34,41 +35,81 @@ public class Mockprep {
 
 
         // We'll start by defining a hash map
-        HashMap<String, Integer> students = new HashMap<>();
+//        HashMap<String, Integer> students = new HashMap<>();
 
 // and putting some data into it
-        students.put("Ryan", 1);
-        students.put("Zach", 5);
-        students.put("Fernando", 2);
-        students.put("Justin", 19);
-
-        System.out.println(students);
+//        students.put("Ryan", 1);
+//        students.put("Zach", 5);
+//        students.put("Fernando", 2);
+//        students.put("Justin", 19);
+//
+//        System.out.println(students);
 
 // obtaining values from the hash map by key
-        System.out.println("students.get(\"Ryan\") = " + students.get("Ryan"));
-        System.out.println("students.get(\"Phillip\") = " + students.get("Phillip"));
-        System.out.println("students.getOrDefault(\"Jason\", 0) = " + students.getOrDefault("Jason", 0));
+//        System.out.println("students.get(\"Ryan\") = " + students.get("Ryan"));
+//        System.out.println("students.get(\"Phillip\") = " + students.get("Phillip"));
+//        System.out.println("students.getOrDefault(\"Jason\", 0) = " + students.getOrDefault("Jason", 0));
 
 // checking if keys or values are present
-        System.out.println("students.containsKey(\"Justin\") = " + students.containsKey("Justin"));
-        System.out.println("students.containsValue(4) = " + students.containsValue(4));
-    }
+//        System.out.println("students.containsKey(\"Justin\") = " + students.containsKey("Justin"));
+//        System.out.println("students.containsValue(4) = " + students.containsValue(4));
+//    }
 
     //Write a Java for loop method that prints out 0 to 35 when called
-    public static void countToThirtyFive() {
-        for(int i = 0; i <= 35; i++) {
-            System.out.println(i);
+//    public static void countToThirtyFive() {
+//        for(int i = 0; i <= 35; i++) {
+//            System.out.println(i);
+//        }
+
+
+       //SWITCH STATEMENT
+
+        int day = 3;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            default:
+                System.out.println("Looking forward to the Weekend");
+                break;
         }
+
+//        int caseSwitch = 1;
+//
+//        switch (caseSwitch) {
+//            case 1:
+//                System.out.println("Case 1");
+//                // Fall through!
+//            case 2:
+//                System.out.println("Case 2");
+//                break;
+//            default:
+//                System.out.println("Default case");
+//                break;
+//        }
+
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
-    public static void countTo(int param) {
-        for(int i = 0; i <= param; i++) {
-            System.out.println(i);
-        }
-
-
-    }
+//    public static void countTo(int param) {
+//        for(int i = 0; i <= param; i++) {
+//            System.out.println(i);
+//        }
+//
+//
+//    }
 
 
 }
