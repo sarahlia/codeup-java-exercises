@@ -16,6 +16,17 @@ public class ControlFlowExercises {
 //            counter += 2;
 //        } while (counter <= 100);
 //
+        //do-while loops
+        do {
+            System.out.println("You will see this message although the condition is false!");
+        } while (false);
+
+        int i = 1;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i < 4);
+
 //        int x = 100;
 //        do {
 //            System.out.println("Do-while loop, counting backwards from 100. x = " + x);
