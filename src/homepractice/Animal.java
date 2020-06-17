@@ -12,8 +12,14 @@ public class Animal {
         myDog.animalSound();
 
 //        Does NOT work in reverse:
-//        Dog brinkley = new Animal();
-//        brinkley.animalSound();
+        Dog brinkley = new Animal();
+        brinkley.animalSound();
+
+        Pig green = new Animal();
+        green.animalSound();
+
+        Animal bubbles = new Dog();
+        bubbles.animalSound();
 
     }
 
