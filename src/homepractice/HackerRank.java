@@ -91,7 +91,24 @@ public class HackerRank {
             System.out.println("2 x " + N + " = " + (2*N));
         }
 
+        int r = 0;
+        int e = 2;
+        int f = 10;
+        int g = r;
+        for(int h=0; h<= f-1; h++){
+            g += (Math.pow(2, h) * e);
+            System.out.printf("%d ", g);
+        }
+        System.out.printf("%n");
 
+        int a = 5;
+        int b = 3;
+        int n = 5;
+        int c = a;
+        for(int y=0; y<= n-1; y++){
+            c += (Math.pow(2, y) * b);
+            System.out.printf("%d ", c);
+        }
 
     }
 }
