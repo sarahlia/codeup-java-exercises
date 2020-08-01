@@ -13,13 +13,13 @@ public class HackerRank {
         //If n is even and in the inclusive range of  to , print Not Weird
         //If n is even and in the inclusive range of  to , print Weird
         //If n is even and greater than , print Not Weird
-//        for(int n = 1; n <= 100; n++ ) {
-//            if ((n % 2 == 0) && (n > 20) || (n == 2) || (n == 4))  {
-//                System.out.println(n + "Not Weird");
-//            } else {
-//                System.out.println(n + "Weird");
-//            }
-//        }
+        for(int n = 1; n <= 100; n++ ) {
+            if ((n % 2 == 0) && (n > 20) || (n == 2) || (n == 4))  {
+                System.out.println(n + "Not Weird");
+            } else {
+                System.out.println(n + "Weird");
+            }
+        }
 
 //        In this challenge, you must read an integer, a double, and a String from stdin, then print the values according to the instructions in the Output Format section below. To make the problem a little easier, a portion of the code is provided for you in the editor.
 //                Input Format
@@ -33,20 +33,20 @@ public class HackerRank {
 //        On the second line, print Double: followed by the unaltered double read from stdin.
 //        On the third line, print Int: followed by the unaltered integer read from stdin.
 //        To make the problem easier, a portion of the code is already provided in the editor.
-//        Scanner scan = new Scanner(System.in);
-//        System.out.println("enter an integer:");
-//        int i = scan.nextInt();
-//
-//        System.out.println("enter a decimal number:");
-//        double d = scan.nextDouble();
-//
-//        System.out.println("enter a welcome message:");
-//        scan.nextLine();
-//        String s = scan.nextLine();
-//
-//        System.out.println("String: " + s);
-//        System.out.println("Double: " + d);
-//        System.out.println("Int: " + i);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter an integer:");
+        int i = scan.nextInt();
+
+        System.out.println("enter a decimal number:");
+        double d = scan.nextDouble();
+
+        System.out.println("enter a welcome message:");
+        scan.nextLine();
+        String s = scan.nextLine();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
 
 
 //        Print the following using printf
@@ -65,7 +65,7 @@ public class HackerRank {
 
         Scanner sc=new Scanner(System.in);
         System.out.println("================================");
-        for(int i=0;i<3;i++){
+        for(int a=0;a<3;a++){
             System.out.println("Enter words:");
             String s1=sc.next();
 
@@ -75,6 +75,21 @@ public class HackerRank {
         }
         System.out.println("================================");
 
+//        Print the following output
+//        Sample Output
+//        2 x 1 = 2
+//        2 x 2 = 4
+//        2 x 3 = 6
+//        2 x 4 = 8
+//        2 x 5 = 10
+//        2 x 6 = 12
+//        2 x 7 = 14
+//        2 x 8 = 16
+//        2 x 9 = 18
+//        2 x 10 = 20
+        for(int N = 1; N <= 10; N++) {
+            System.out.println("2 x " + N + " = " + (2*N));
+        }
 
 
 
