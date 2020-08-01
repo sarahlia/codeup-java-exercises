@@ -33,20 +33,48 @@ public class HackerRank {
 //        On the second line, print Double: followed by the unaltered double read from stdin.
 //        On the third line, print Int: followed by the unaltered integer read from stdin.
 //        To make the problem easier, a portion of the code is already provided in the editor.
-        Scanner scan = new Scanner(System.in);
-        System.out.println("enter an integer:");
-        int i = scan.nextInt();
+//        Scanner scan = new Scanner(System.in);
+//        System.out.println("enter an integer:");
+//        int i = scan.nextInt();
+//
+//        System.out.println("enter a decimal number:");
+//        double d = scan.nextDouble();
+//
+//        System.out.println("enter a welcome message:");
+//        scan.nextLine();
+//        String s = scan.nextLine();
+//
+//        System.out.println("String: " + s);
+//        System.out.println("Double: " + d);
+//        System.out.println("Int: " + i);
 
-        System.out.println("enter a decimal number:");
-        double d = scan.nextDouble();
 
-        System.out.println("enter a welcome message:");
-        scan.nextLine();
-        String s = scan.nextLine();
+//        Print the following using printf
+//        Sample Input
+//        java 100
+//        cpp 65
+//        python 50
 
-        System.out.println("String: " + s);
-        System.out.println("Double: " + d);
-        System.out.println("Int: " + i);
+//        Sample Output
+//        ================================
+//        java           100
+//        cpp            065
+//        python         050
+//        ================================
+//        Each String is left-justified with trailing whitespace through the first  characters. The leading digit of the integer is the  character, and each integer that was less than  digits now has leading zeroes.
+
+        Scanner sc=new Scanner(System.in);
+        System.out.println("================================");
+        for(int i=0;i<3;i++){
+            System.out.println("Enter words:");
+            String s1=sc.next();
+
+            System.out.println("Enter numbers:");
+            int x=sc.nextInt();
+            System.out.printf("%-15s%03d%n", s1, x);
+        }
+        System.out.println("================================");
+
 
 
 
