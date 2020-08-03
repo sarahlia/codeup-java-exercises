@@ -112,25 +112,45 @@ public class HackerRank {
 //            System.out.printf("%d ", c);
 //        }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter amount:");
-        double payment = scanner.nextDouble();
-        scanner.close();
+        //currency formatter problem:
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter amount:");
+//        double payment = scanner.nextDouble();
+//        scanner.close();
+//
+//        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+//        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+//        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+//        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+//
+//        String us = usFormat.format(payment);
+//        String india = indiaFormat.format(payment);
+//        String china = chinaFormat.format(payment);
+//        String france = franceFormat.format(payment);
+//
+//        System.out.println("US: " + us);
+//        System.out.println("India: " + india);
+//        System.out.println("China: " + china);
+//        System.out.println("France: " + france);
 
-        NumberFormat usFormat     = NumberFormat.getCurrencyInstance(Locale.US);
-        NumberFormat indiaFormat  = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
-        NumberFormat chinaFormat  = NumberFormat.getCurrencyInstance(Locale.CHINA);
-        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        MyCalculator my_calculator = new MyCalculator();
+        System.out.print("I implemented: ");
+        ImplementedInterfaceNames(my_calculator);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        int n = sc.nextInt();
+        System.out.print(my_calculator.divisor_sum(n) + "\n");
+        sc.close();
 
-        String us = usFormat.format(payment);
-        String india = indiaFormat.format(payment);
-        String china = chinaFormat.format(payment);
-        String france = franceFormat.format(payment);
 
-        System.out.println("US: " + us);
-        System.out.println("India: " + india);
-        System.out.println("China: " + china);
-        System.out.println("France: " + france);
+    }
 
+//    ImplementedInterfaceNames method takes an object and prints the name of the interfaces it implemented
+    static void ImplementedInterfaceNames(Object o){
+        Class[] theInterfaces = o.getClass().getInterfaces();
+        for (int i = 0; i < theInterfaces.length; i++){
+            String interfaceName = theInterfaces[i].getName();
+            System.out.println(interfaceName);
+        }
     }
 }
