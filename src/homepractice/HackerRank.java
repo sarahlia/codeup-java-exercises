@@ -133,15 +133,20 @@ public class HackerRank {
 //        System.out.println("China: " + china);
 //        System.out.println("France: " + france);
 
-        MyCalculator my_calculator = new MyCalculator();
-        System.out.print("I implemented: ");
-        ImplementedInterfaceNames(my_calculator);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter an integer: ");
-        int n = sc.nextInt();
-        System.out.print(my_calculator.divisor_sum(n) + "\n");
-        sc.close();
+//        MyCalculator my_calculator = new MyCalculator();
+//        System.out.print("I implemented: ");
+//        ImplementedInterfaceNames(my_calculator);
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter an integer: ");
+//        int n = sc.nextInt();
+//        System.out.print(my_calculator.divisor_sum(n) + "\n");
+//        sc.close();
 
+        String A = "hello";
+        String B = "java";
+
+        System.out.println(capitalizeString(A) + " " + capitalizeString(B));
+        System.out.println(A.compareTo(B) > 0 ? "Yes" : "No");
 
     }
 
@@ -152,5 +157,10 @@ public class HackerRank {
             String interfaceName = theInterfaces[i].getName();
             System.out.println(interfaceName);
         }
+    }
+
+    //capitalize the first letter of a string
+    private static String capitalizeString(String str) {
+        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
     }
 }
