@@ -1,6 +1,8 @@
 package homepractice;
 
 import java.util.*;
+import java.io.IOException;
+import java.lang.reflect.Method;
 
 public class HackerRankPartTwo {
 
@@ -36,33 +38,50 @@ public class HackerRankPartTwo {
 //        sc.close();
 
         //Collections.sort exercise to sort in descending cgpa order:
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter number of entries:");
-        int testCases = Integer.parseInt(in.nextLine());
+//        Scanner in = new Scanner(System.in);
+//        System.out.println("Enter number of entries:");
+//        int testCases = Integer.parseInt(in.nextLine());
 
-        List<Student> studentList = new ArrayList<Student>();
-        while(testCases>0){
-            System.out.println("Enter id:");
-            int id = in.nextInt();
+//        List<Student> studentList = new ArrayList<Student>();
+//        while(testCases>0){
+//            System.out.println("Enter id:");
+//            int id = in.nextInt();
+//
+//            System.out.println("Enter name:");
+//            String fname = in.next();
+//
+//            System.out.println("Enter cgpa:");
+//            double cgpa = in.nextDouble();
+//
+//            Student st = new Student(id, fname, cgpa);
+//            studentList.add(st);
+//
+//            testCases--;
+//        }
 
-            System.out.println("Enter name:");
-            String fname = in.next();
+//        Collections.sort(studentList, Comparator.comparing(Student :: getCgpa).reversed().
+//                thenComparing(Student :: getFname).thenComparing(Student :: getId));
+//
+//        for(Student st: studentList){
+//            System.out.println(st.getFname());
+//        }
 
-            System.out.println("Enter cgpa:");
-            double cgpa = in.nextDouble();
+        //
+        Printer myPrinter = new Printer();
+        Integer[] intArray = { 1, 2, 3 };
+        String[] stringArray = {"Hello", "World"};
+        myPrinter.printArray(intArray);
+        myPrinter.printArray(stringArray);
+        int count = 0;
 
-            Student st = new Student(id, fname, cgpa);
-            studentList.add(st);
+        for (Method method : Printer.class.getDeclaredMethods()) {
+            String name = method.getName();
 
-            testCases--;
+            if(name.equals("printArray"))
+                count++;
         }
 
-        Collections.sort(studentList, Comparator.comparing(Student :: getCgpa).reversed().
-                thenComparing(Student :: getFname).thenComparing(Student :: getId));
-
-        for(Student st: studentList){
-            System.out.println(st.getFname());
-        }
+        if(count > 1)System.out.println("Method overloading is not allowed!");
 
     }
 
