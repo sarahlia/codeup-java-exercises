@@ -69,7 +69,7 @@ public class HackerRankPartTwo {
 //            System.out.println(st.getFname());
 //        }
 
-        //
+        //Printer
 //        Printer myPrinter = new Printer();
 //        Integer[] intArray = { 1, 2, 3 };
 //        String[] stringArray = {"Hello", "World"};
@@ -86,6 +86,7 @@ public class HackerRankPartTwo {
 //
 //        if(count > 1)System.out.println("Method overloading is not allowed!");
 
+        //Exception Handling
         while (in .hasNextInt()) {
             int n = in .nextInt();
             int p = in .nextInt();
@@ -96,7 +97,6 @@ public class HackerRankPartTwo {
                 System.out.println(e);
             }
         }
-
 
     }
 
