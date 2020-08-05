@@ -6,6 +6,9 @@ import java.lang.reflect.Method;
 
 public class HackerRankPartTwo {
 
+    public static final MyCalculator my_calculator = new MyCalculator();
+    public static final Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 
@@ -67,21 +70,33 @@ public class HackerRankPartTwo {
 //        }
 
         //
-        Printer myPrinter = new Printer();
-        Integer[] intArray = { 1, 2, 3 };
-        String[] stringArray = {"Hello", "World"};
-        myPrinter.printArray(intArray);
-        myPrinter.printArray(stringArray);
-        int count = 0;
+//        Printer myPrinter = new Printer();
+//        Integer[] intArray = { 1, 2, 3 };
+//        String[] stringArray = {"Hello", "World"};
+//        myPrinter.printArray(intArray);
+//        myPrinter.printArray(stringArray);
+//        int count = 0;
+//
+//        for (Method method : Printer.class.getDeclaredMethods()) {
+//            String name = method.getName();
+//
+//            if(name.equals("printArray"))
+//                count++;
+//        }
+//
+//        if(count > 1)System.out.println("Method overloading is not allowed!");
 
-        for (Method method : Printer.class.getDeclaredMethods()) {
-            String name = method.getName();
+        while (in .hasNextInt()) {
+            int n = in .nextInt();
+            int p = in .nextInt();
 
-            if(name.equals("printArray"))
-                count++;
+            try {
+                System.out.println(my_calculator.power(n, p));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
 
-        if(count > 1)System.out.println("Method overloading is not allowed!");
 
     }
 
