@@ -98,43 +98,61 @@ public class HackerRankPartTwo {
 //            }
 //        }
 
+        int[] arr = {1, 3, 9, 7};
+        reverseArray(arr);
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
+        System.out.println(arr[3]);
     }
 
     //insert a node at the head of a linked list
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
+//    static class SinglyLinkedListNode {
+//        public int data;
+//        public SinglyLinkedListNode next;
+//
+//        public SinglyLinkedListNode(int nodeData) {
+//            this.data = nodeData;
+//            this.next = null;
+//        }
+//    }
+//
+//    static class SinglyLinkedList {
+//        public SinglyLinkedListNode head;
+//        public SinglyLinkedListNode tail;
+//
+//        public SinglyLinkedList() {
+//            this.head = null;
+//            this.tail = null;
+//        }
+//    }
 
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
+//    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+//        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+//        newNode.data = data;
+//        newNode.next = null;
+//
+//        if (llist == null) {
+//            llist = newNode;
+//        } else {
+//            newNode.next = llist;
+//            llist = newNode;
+//
+//        }
+//        return llist;
+//    }
+
+    //reverse the order of an array
+    static int[] reverseArray(int[] a) {
+        for(int i = 0, j = a.length-1; i < a.length; i++, j--){
+            if(i < j){
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
         }
+        return a;
+
     }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
-
-        public SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-    }
-
-    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
-        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
-        newNode.data = data;
-        newNode.next = null;
-
-        if (llist == null) {
-            llist = newNode;
-        } else {
-            newNode.next = llist;
-            llist = newNode;
-
-        }
-        return llist;
-    }
-
 
 }
