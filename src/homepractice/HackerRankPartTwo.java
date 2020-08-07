@@ -87,19 +87,54 @@ public class HackerRankPartTwo {
 //        if(count > 1)System.out.println("Method overloading is not allowed!");
 
         //Exception Handling
-        while (in .hasNextInt()) {
-            int n = in .nextInt();
-            int p = in .nextInt();
-
-            try {
-                System.out.println(my_calculator.power(n, p));
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
+//        while (in .hasNextInt()) {
+//            int n = in .nextInt();
+//            int p = in .nextInt();
+//
+//            try {
+//                System.out.println(my_calculator.power(n, p));
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//        }
 
     }
 
+    //insert a node at the head of a linked list
+    static class SinglyLinkedListNode {
+        public int data;
+        public SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    }
+
+    static class SinglyLinkedList {
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
+
+        public SinglyLinkedList() {
+            this.head = null;
+            this.tail = null;
+        }
+    }
+
+    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+        newNode.data = data;
+        newNode.next = null;
+
+        if (llist == null) {
+            llist = newNode;
+        } else {
+            newNode.next = llist;
+            llist = newNode;
+
+        }
+        return llist;
+    }
 
 
 }
