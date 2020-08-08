@@ -166,11 +166,27 @@ public class HackerRankPartTwo {
 //    }
 
     //print the elements of a LinkedList in reverse
-    static void reversePrint(SinglyLinkedListNode head) {
-        if (head != null) {
-            reversePrint(head.next);
-            System.out.println(head.data);
+//    static void reversePrint(SinglyLinkedListNode head) {
+//        if (head != null) {
+//            reversePrint(head.next);
+//            System.out.println(head.data);
+//        }
+//
+//    }
+
+    //insert a node at the tail of a LinkedList
+    static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
+        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+
+        if(head == null) {
+            return newNode;
         }
 
+        SinglyLinkedListNode current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+        return head;
     }
 }
