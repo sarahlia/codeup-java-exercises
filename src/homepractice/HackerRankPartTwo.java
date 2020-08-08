@@ -107,25 +107,25 @@ public class HackerRankPartTwo {
     }
 
     //insert a node at the head of a linked list
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
+//    static class SinglyLinkedListNode {
+//        public int data;
+//        public SinglyLinkedListNode next;
+//
+//        public SinglyLinkedListNode(int nodeData) {
+//            this.data = nodeData;
+//            this.next = null;
+//        }
+//    }
 
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
-
-        public SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-    }
+//    static class SinglyLinkedList {
+//        public SinglyLinkedListNode head;
+//        public SinglyLinkedListNode tail;
+//
+//        public SinglyLinkedList() {
+//            this.head = null;
+//            this.tail = null;
+//        }
+//    }
 
 //    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
 //        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
@@ -156,11 +156,20 @@ public class HackerRankPartTwo {
 //    }
 
     //print the elements of a LinkedList
-    public static void printLinkedList(SinglyLinkedListNode head) {
-        SinglyLinkedListNode current = head;
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
+//    public static void printLinkedList(SinglyLinkedListNode head) {
+//        SinglyLinkedListNode current = head;
+//        while (current != null) {
+//            System.out.println(current.data);
+//            current = current.next;
+//        }
+//
+//    }
+
+    //print the elements of a LinkedList in reverse
+    static void reversePrint(SinglyLinkedListNode head) {
+        if (head != null) {
+            reversePrint(head.next);
+            System.out.println(head.data);
         }
 
     }
