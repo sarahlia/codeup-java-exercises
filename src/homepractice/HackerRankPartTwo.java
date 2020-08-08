@@ -175,18 +175,30 @@ public class HackerRankPartTwo {
 //    }
 
     //insert a node at the tail of a LinkedList
-    static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
-        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+//    static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
+//        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+//
+//        if(head == null) {
+//            return newNode;
+//        }
+//
+//        SinglyLinkedListNode current = head;
+//        while (current.next != null) {
+//            current = current.next;
+//        }
+//        current.next = newNode;
+//        return head;
+//    }
 
-        if(head == null) {
-            return newNode;
+    // Reverse the LinkedList below
+    static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+        if(head == null || head.next == null) {
+            return head;
         }
+        SinglyLinkedListNode remaining = reverse(head.next);
+        head.next.next = head;
+        head.next = null;
+        return remaining;
 
-        SinglyLinkedListNode current = head;
-        while (current.next != null) {
-            current = current.next;
-        }
-        current.next = newNode;
-        return head;
     }
 }
