@@ -112,5 +112,22 @@ public class Mockprep {
 //    }
 
 
+    //In an array of integers, every element appears twice except for one. Find it.
+    //HashMap method:
+    public int singleNumber(int[] numbers) {
+        HashMap<Integer, Integer> table = new HashMap<>();
+
+        for(int el:numbers) {
+            table.put(el, table.getOrDefault(el, 0) + 1);
+        }
+        for(int el:numbers) {
+            if (table.get(el) == 1) {
+                return el;
+            }
+        }
+
+        return 0;
+    }
+
 
 }
