@@ -100,6 +100,11 @@ public class Mockprep {
 //                break;
 //        }
 
+        //test out singleNumber method (using HashMap):
+        Mockprep mockprep = new Mockprep();
+        int[] arr = {2, 4, 2, 4, 3};
+        System.out.println("mockprep.singleNumber(arr) = " + mockprep.singleNumber(arr));
+
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
