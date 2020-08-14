@@ -102,9 +102,12 @@ public class Mockprep {
 
         //test out singleNumber method (using HashMap):
         Mockprep mockprep = new Mockprep();
-        int[] arr = {2, 4, 2, 4, 3};
-        System.out.println("mockprep.singleNumber(arr) = " + mockprep.singleNumber(arr));
+//        int[] arr = {2, 4, 2, 4, 3};
+//        System.out.println("mockprep.singleNumber(arr) = " + mockprep.singleNumber(arr));
 
+        //test out uniqueNumber method (using ArrayList):
+        int[] anotherArray = {7, 5, 6, 5, 9, 6, 7};
+        System.out.println("mockprep.uniqueNumber(anotherArray) = " + mockprep.uniqueNumber(anotherArray));
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
@@ -132,6 +135,20 @@ public class Mockprep {
         }
 
         return 0;
+    }
+
+    //ArrayList method:
+    public int uniqueNumber(int[] numbers) {
+        ArrayList<Integer> uniqueList = new ArrayList<>();
+
+        for(int el:numbers) {
+            if(!uniqueList.contains(el)) {
+                uniqueList.add(el);
+            } else {
+                uniqueList.remove(new Integer(el));
+            }
+        }
+        return uniqueList.get(0);
     }
 
 
