@@ -39,4 +39,74 @@ public class Game {
         return this.placements;
     }
 
+    public void printBoard() {
+        int count = 0;
+        for(char[] row:board) {
+            for(char col:row) {
+                if(col == ' ') {
+                    System.out.println(placements[count]);
+                    count++;
+                } else {
+                    System.out.println(col);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void showOptions() {
+        int count = 1;
+        for(char[] row:board) {
+            for(char col:row) {
+                if(col == ' ') {
+                    System.out.println(count);
+                    count++;
+                } else {
+                    System.out.println(col);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void placeUserPosition(int position, char XorO) {
+        this.placements[position-1] = XorO;
+    }
+
+    public void placeComputerPosition(int position, char XorO) {
+        this.placements[position] = XorO;
+    }
+
+    public boolean positionIsTaken(int position) {
+        return this.placements[position-1] != ' ';
+    }
+
+    public boolean isLastMove() {
+        for(char placement:placements) {
+            if(placement == ' ') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isWon() {
+        updateWinningPositions();
+
+        for(String position:winningPositions) {
+            if(isPositionWon(position)) {
+                setWinner(position);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean isPositionWon(String position) {
+        return position.equals("XXX") || position.equals("OOO");
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner.charAt(0);
+    }
 }
