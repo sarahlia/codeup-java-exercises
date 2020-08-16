@@ -44,10 +44,10 @@ public class Game {
         for(char[] row:board) {
             for(char col:row) {
                 if(col == ' ') {
-                    System.out.println(placements[count]);
+                    System.out.print(placements[count]);
                     count++;
                 } else {
-                    System.out.println(col);
+                    System.out.print(col);
                 }
             }
             System.out.println();
@@ -59,10 +59,10 @@ public class Game {
         for(char[] row:board) {
             for(char col:row) {
                 if(col == ' ') {
-                    System.out.println(count);
+                    System.out.print(count);
                     count++;
                 } else {
-                    System.out.println(col);
+                    System.out.print(col);
                 }
             }
             System.out.println();
