@@ -20,9 +20,6 @@ public class Student {
     }
 
     public ArrayList<Integer> getGrades() {
-//        for(double grade:grades) {
-//            System.out.println(grade);
-//        }
         return this.grades;
     }
 

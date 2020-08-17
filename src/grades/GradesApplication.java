@@ -36,7 +36,6 @@ public class GradesApplication {
         students.put("luisfonsi", luis);
 
         //print the actual name and average grade
-//        System.out.println("The name of the student with the github username mjackson is " + students.get("mjackson").getName() + " and his/her average grade is: " + students.get("mjackson").getGradeAverage());
         for(String username : students.keySet() ) {
             String actualName = students.get(username).getName();
 //            System.out.println(actualName);
@@ -69,11 +68,11 @@ public class GradesApplication {
                     System.out.println(students.get(resp).getGrades().get(2));
                 //BONUS: allow the user to view all of the grades for all of the students (option "0").
                 } else if(resp.equals("0")) {
-                        for (String user: students.keySet()) {
-                            System.out.printf("%s's grades: \n", user);
-                            System.out.println(students.get(user).getGrades().get(0));
-                            System.out.println(students.get(user).getGrades().get(1));
-                            System.out.println(students.get(user).getGrades().get(2));
+                        for (String username: students.keySet()) {
+                            System.out.printf("%s's grades: \n", username);
+                            System.out.println(students.get(username).getGrades().get(0));
+                            System.out.println(students.get(username).getGrades().get(1));
+                            System.out.println(students.get(username).getGrades().get(2));
                         }
                 } else {
                     System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
