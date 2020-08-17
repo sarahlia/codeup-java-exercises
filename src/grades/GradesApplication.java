@@ -56,17 +56,25 @@ public class GradesApplication {
                 for (String username : students.keySet()) {
                     System.out.printf("|%s| ", username);
                 }
-
+                System.out.print("|0 - View all grades for all of the students|");
                 System.out.println("\nWhat student would you like to see more information on?");
 
                 String resp = input.getString();
                 if(students.containsKey(resp)) {
-                    System.out.printf("Name: %s - Github username: %s and average grade: %.2f\n", students.get(resp).getName(), resp, students.get(resp).getGradeAverage() );
+                    System.out.printf("Name: %s - Github username: %s and average grade: %.2f\n", students.get(resp).getName(), resp, students.get(resp).getGradeAverage());
                     //BONUS: display all of the student's grades in addition to the grade average
                     System.out.printf("%s's grades are: \n", resp);
                     System.out.println(students.get(resp).getGrades().get(0));
                     System.out.println(students.get(resp).getGrades().get(1));
                     System.out.println(students.get(resp).getGrades().get(2));
+                //BONUS: allow the user to view all of the grades for all of the students (option "0").
+                } else if(resp.equals("0")) {
+                        for (String user: students.keySet()) {
+                            System.out.printf("%s's grades: \n", user);
+                            System.out.println(students.get(user).getGrades().get(0));
+                            System.out.println(students.get(user).getGrades().get(1));
+                            System.out.println(students.get(user).getGrades().get(2));
+                        }
                 } else {
                     System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
                 }
