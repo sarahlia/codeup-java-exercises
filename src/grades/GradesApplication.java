@@ -13,17 +13,17 @@ public class GradesApplication {
         Student michael = new Student("michael");
         michael.addGrade(80);
         michael.addGrade(78);
-        michael.addGrade(70);
+        michael.addGrade(70); // average = 76
 
         Student maureen = new Student("maureen");
         maureen.addGrade(85);
         maureen.addGrade(80);
-        maureen.addGrade(83);
+        maureen.addGrade(83); // average = 82.76
 
         Student laura = new Student("laura");
         laura.addGrade(95);
         laura.addGrade(97);
-        laura.addGrade(90);
+        laura.addGrade(90); // average = 94
 
         Student luis = new Student("luis");
         luis.addGrade(98);
@@ -61,7 +61,12 @@ public class GradesApplication {
 
                 String resp = input.getString();
                 if(students.containsKey(resp)) {
-                    System.out.printf("Name: %s - Github username: %s and average grade: %.2f", students.get(resp).getName(), resp, students.get(resp).getGradeAverage() );
+                    System.out.printf("Name: %s - Github username: %s and average grade: %.2f\n", students.get(resp).getName(), resp, students.get(resp).getGradeAverage() );
+                    //BONUS: display all of the student's grades in addition to the grade average
+                    System.out.printf("%s's grades are: \n", resp);
+                    System.out.println(students.get(resp).getGrades().get(0));
+                    System.out.println(students.get(resp).getGrades().get(1));
+                    System.out.println(students.get(resp).getGrades().get(2));
                 } else {
                     System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
                 }
@@ -70,6 +75,8 @@ public class GradesApplication {
             } while(input.yesNo());
             System.out.println("Goodbye, and have a wonderful day!");
         }
+
+
 
 
 }
