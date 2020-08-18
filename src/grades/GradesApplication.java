@@ -49,6 +49,7 @@ public class GradesApplication {
         //Exercise 3
         public static void cli(HashMap<String, Student> students) {
             System.out.println("Welcome!");
+            System.out.println("classAverage(students) = " + classAverage(students));
             System.out.println("Here are the GitHub usernames of our students:");
 
             do{
@@ -83,6 +84,15 @@ public class GradesApplication {
             System.out.println("Goodbye, and have a wonderful day!");
         }
 
+        //BONUS: provide an option to view the overall class average
+        public static double classAverage(HashMap<String, Student> students) {
+            double totalClassGrade = 0;
+
+            for(Student student:students.values()) {
+                totalClassGrade += student.getGradeAverage();
+            }
+            return totalClassGrade / students.size();
+        }
 
 
 
