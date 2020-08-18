@@ -41,7 +41,7 @@ public class GradesApplication {
 //            System.out.println(actualName);
             double avgGrade = students.get(username).getGradeAverage();
 //            System.out.println(avgGrade);
-            System.out.printf("The name of the student with the github username %s is %s and his/her average grade is %.1f%n", username, actualName, avgGrade);
+//            System.out.printf("The name of the student with the github username %s is %s and his/her average grade is %.1f%n", username, actualName, avgGrade);
         }
 
         cli(students);
@@ -56,7 +56,8 @@ public class GradesApplication {
                     System.out.printf("|%s| ", username);
                 }
                 System.out.print("|0 - View all grades for all of the students| ");
-                System.out.print("|1 - View the overage class average|");
+                System.out.print("|1 - View the overage class average| ");
+                System.out.print("|2 - Print CSV report|");
                 System.out.println("\nWhat student would you like to see more information on?");
 
                 String resp = input.getString();
@@ -78,6 +79,9 @@ public class GradesApplication {
                 //BONUS: provide an option to view the overall class average (option "1")
                 } else if(resp.equals("1")) {
                     System.out.printf("classAverage = %.2f \n", classAverage(students));
+//                //BONUS: provide an option to print a CSV report of all the students (option "2")
+                } else if(resp.equals("2")) {
+                    printCsv(students);
                 } else {
                     System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
                 }
@@ -96,6 +100,15 @@ public class GradesApplication {
             return totalClassGrade / students.size();
         }
 
+        public static void printCsv(HashMap<String, Student> students) {
+            System.out.println("name,github_username,average");
+
+            for(String username: students.keySet()) {
+                String actualName = students.get(username).getName();
+                double average = students.get(username).getGradeAverage();
+                System.out.printf("%s,%s,%.1f \n", actualName, username, average);
+            }
+        }
 
 
 }
