@@ -49,14 +49,14 @@ public class GradesApplication {
         //Exercise 3
         public static void cli(HashMap<String, Student> students) {
             System.out.println("Welcome!");
-            System.out.println("classAverage(students) = " + classAverage(students));
             System.out.println("Here are the GitHub usernames of our students:");
 
             do{
                 for (String username : students.keySet()) {
                     System.out.printf("|%s| ", username);
                 }
-                System.out.print("|0 - View all grades for all of the students|");
+                System.out.print("|0 - View all grades for all of the students| ");
+                System.out.print("|1 - View the overage class average|");
                 System.out.println("\nWhat student would you like to see more information on?");
 
                 String resp = input.getString();
@@ -69,12 +69,15 @@ public class GradesApplication {
                     System.out.println(students.get(resp).getGrades().get(2));
                 //BONUS: allow the user to view all of the grades for all of the students (option "0").
                 } else if(resp.equals("0")) {
-                        for (String username: students.keySet()) {
-                            System.out.printf("%s's grades: \n", username);
-                            System.out.println(students.get(username).getGrades().get(0));
-                            System.out.println(students.get(username).getGrades().get(1));
-                            System.out.println(students.get(username).getGrades().get(2));
-                        }
+                    for (String username : students.keySet()) {
+                        System.out.printf("%s's grades: \n", username);
+                        System.out.println(students.get(username).getGrades().get(0));
+                        System.out.println(students.get(username).getGrades().get(1));
+                        System.out.println(students.get(username).getGrades().get(2));
+                    }
+                //BONUS: provide an option to view the overall class average (option "1")
+                } else if(resp.equals("1")) {
+                    System.out.printf("classAverage = %.2f \n", classAverage(students));
                 } else {
                     System.out.printf("Sorry, no student found with the GitHub username of %s ", resp);
                 }
@@ -84,7 +87,6 @@ public class GradesApplication {
             System.out.println("Goodbye, and have a wonderful day!");
         }
 
-        //BONUS: provide an option to view the overall class average
         public static double classAverage(HashMap<String, Student> students) {
             double totalClassGrade = 0;
 
