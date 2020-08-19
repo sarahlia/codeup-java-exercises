@@ -1,12 +1,13 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Student {
     private String name;
     private ArrayList<Integer> grades;
-    private HashMap<String, String> attendance = new HashMap<>();
+    public static HashMap<String, String> attendance = new HashMap<>();
 
     public Student(String name) {
         this.name = name;
@@ -61,8 +62,16 @@ public class Student {
 
         joanne.recordAttendance("2020-08-14", "P");
         joanne.recordAttendance("2020-08-07", "A");
-        joanne.recordAttendance("2020-07-31", "P");
+        joanne.recordAttendance("2020-07-01", "P");
+        joanne.recordAttendance("2020-07-02", "A");
+        joanne.recordAttendance("2020-07-05", "P");
+        joanne.recordAttendance("2020-07-12", "P");
         System.out.println("joanne.attendance = " + joanne.attendance);
+
+
+        int count = Collections.frequency(new ArrayList<String>(attendance.values()), "P");
+        System.out.println(count);
     }
+
 
 }
