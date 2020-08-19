@@ -15,20 +15,48 @@ public class GradesApplication {
         michael.addGrade(78);
         michael.addGrade(70); // average = 76
 
+        michael.recordAttendance("2020-08-14", "P");
+        michael.recordAttendance("2020-08-07", "P");
+        michael.recordAttendance("2020-07-01", "P");
+        michael.recordAttendance("2020-07-02", "P");
+        michael.recordAttendance("2020-07-05", "P");
+        michael.recordAttendance("2020-07-12", "P");
+
         Student maureen = new Student("maureen");
         maureen.addGrade(85);
         maureen.addGrade(80);
         maureen.addGrade(83); // average = 82.76
+
+        maureen.recordAttendance("2020-08-14", "A");
+        maureen.recordAttendance("2020-08-07", "P");
+        maureen.recordAttendance("2020-07-01", "P");
+        maureen.recordAttendance("2020-07-02", "P");
+        maureen.recordAttendance("2020-07-05", "P");
+        maureen.recordAttendance("2020-07-12", "P");
 
         Student laura = new Student("laura");
         laura.addGrade(95);
         laura.addGrade(97);
         laura.addGrade(90); // average = 94
 
+        laura.recordAttendance("2020-08-14", "P");
+        laura.recordAttendance("2020-08-07", "P");
+        laura.recordAttendance("2020-07-01", "A");
+        laura.recordAttendance("2020-07-02", "P");
+        laura.recordAttendance("2020-07-05", "A");
+        laura.recordAttendance("2020-07-12", "P");
+
         Student luis = new Student("luis");
         luis.addGrade(98);
         luis.addGrade(100);
         luis.addGrade(96);
+
+        luis.recordAttendance("2020-08-14", "A");
+        luis.recordAttendance("2020-08-07", "A");
+        luis.recordAttendance("2020-07-01", "P");
+        luis.recordAttendance("2020-07-02", "A");
+        luis.recordAttendance("2020-07-05", "P");
+        luis.recordAttendance("2020-07-12", "A");
 
         students.put("mjackson", michael);
         students.put("moken23", maureen);
@@ -56,7 +84,7 @@ public class GradesApplication {
                     System.out.printf("|%s| ", username);
                 }
                 System.out.print("|0 - View all grades for all of the students| ");
-                System.out.print("|1 - View the overage class average| ");
+                System.out.print("|1 - View the overall class average| ");
                 System.out.print("|2 - Print CSV report|");
                 System.out.println("\nWhat student would you like to see more information on?");
 
@@ -68,6 +96,8 @@ public class GradesApplication {
                     System.out.println(students.get(resp).getGrades().get(0));
                     System.out.println(students.get(resp).getGrades().get(1));
                     System.out.println(students.get(resp).getGrades().get(2));
+                    //BONUS: display student's attendance information to the output of the cli
+                    System.out.printf("Attendance percentage: %.1f %% \n", students.get(resp).attendancePercentage());
                 //BONUS: allow the user to view all of the grades for all of the students (option "0").
                 } else if(resp.equals("0")) {
                     for (String username : students.keySet()) {
@@ -101,12 +131,13 @@ public class GradesApplication {
         }
 
         public static void printCsv(HashMap<String, Student> students) {
-            System.out.println("name,github_username,average");
+            System.out.println("name,github_username,average,attendance_percentage");
 
             for(String username: students.keySet()) {
                 String actualName = students.get(username).getName();
                 double average = students.get(username).getGradeAverage();
-                System.out.printf("%s,%s,%.1f \n", actualName, username, average);
+                double attendPercent = students.get(username).attendancePercentage();
+                System.out.printf("%s,%s,%.1f,%.1f%% \n", actualName, username, average, attendPercent);
             }
         }
 

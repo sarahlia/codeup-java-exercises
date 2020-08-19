@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class Student {
     private String name;
     private ArrayList<Integer> grades;
-    public static HashMap<String, String> attendance = new HashMap<>();
+    public HashMap<String, String> attendance = new HashMap<>();
 
     public Student(String name) {
         this.name = name;
@@ -50,6 +50,12 @@ public class Student {
         this.attendance.putIfAbsent(date, value);
     }
 
+    //BONUS: Create an instance method on your Student class to calculate a student's attendance percentage
+    public double attendancePercentage() {
+        int present = Collections.frequency(new ArrayList<String>(attendance.values()), "P");
+        return (double) present / attendance.size() * 100;
+    }
+
     public static void main(String[] args) {
         Student joanne = new Student("joanne");
         joanne.addGrade(95);
@@ -67,10 +73,8 @@ public class Student {
         joanne.recordAttendance("2020-07-05", "P");
         joanne.recordAttendance("2020-07-12", "P");
         System.out.println("joanne.attendance = " + joanne.attendance);
+        System.out.println("joanne.attendancePercentage() = " + joanne.attendancePercentage());
 
-
-        int count = Collections.frequency(new ArrayList<String>(attendance.values()), "P");
-        System.out.println(count);
     }
 
 
