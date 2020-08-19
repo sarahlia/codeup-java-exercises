@@ -3,6 +3,7 @@ package grades;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class Student {
     private String name;
@@ -56,6 +57,22 @@ public class Student {
         return (double) present / attendance.size() * 100;
     }
 
+    //BONUS: Create an instance method on Student that finds the specific days a student was absent. This method should return a List of Strings, where each string is the date of the absence.
+    public List<String> daysAbsent() {
+        List<String> newList = new ArrayList<>();
+
+        for(String day: attendance.keySet()) {
+//            System.out.println(day);
+//            System.out.println("attendance.get(day) = " + attendance.get(day));
+            if(attendance.get(day).equals("A")) {
+                newList.add(day);
+            } else {
+                newList.remove(day);
+            }
+        }
+        return newList;
+    }
+
     public static void main(String[] args) {
         Student joanne = new Student("joanne");
         joanne.addGrade(95);
@@ -74,6 +91,7 @@ public class Student {
         joanne.recordAttendance("2020-07-12", "P");
         System.out.println("joanne.attendance = " + joanne.attendance);
         System.out.println("joanne.attendancePercentage() = " + joanne.attendancePercentage());
+        System.out.println("joanne.daysAbsent() = " + joanne.daysAbsent());
 
     }
 

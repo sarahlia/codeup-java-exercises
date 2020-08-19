@@ -98,6 +98,8 @@ public class GradesApplication {
                     System.out.println(students.get(resp).getGrades().get(2));
                     //BONUS: display student's attendance information to the output of the cli
                     System.out.printf("Attendance percentage: %.1f %% \n", students.get(resp).attendancePercentage());
+                    //BONUS: display the dates that the student was absent
+                    System.out.printf("Dates absent: %s \n", students.get(resp).daysAbsent());
                 //BONUS: allow the user to view all of the grades for all of the students (option "0").
                 } else if(resp.equals("0")) {
                     for (String username : students.keySet()) {
