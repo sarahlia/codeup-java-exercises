@@ -2,6 +2,7 @@ package homepractice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Mockprep {
@@ -107,7 +108,8 @@ public class Mockprep {
 
         //test out uniqueNumber method (using ArrayList):
         int[] anotherArray = {7, 5, 6, 5, 9, 6, 7};
-        System.out.println("mockprep.uniqueNumber(anotherArray) = " + mockprep.uniqueNumber(anotherArray));
+//        System.out.println("mockprep.uniqueNumber(anotherArray) = " + mockprep.uniqueNumber(anotherArray));
+        System.out.println("mockprep.containsDuplicate(anotherArray) = " + mockprep.containsDuplicate(anotherArray));
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
@@ -149,6 +151,21 @@ public class Mockprep {
             }
         }
         return uniqueList.get(0);
+    }
+
+    //Given an array of integers, find if the array contains any duplicates.
+    //Your function should return true if any value appears at least twice in the array,
+    // and it should return false if every element is distinct.
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>(nums.length);
+
+        for(int num:nums) {
+            if(set.contains(num)) return true;
+            set.add(num);
+        }
+        System.out.println(set);
+        return false;
+
     }
 
 
