@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Mockprep {
+
+    ListNode head;
+
     public static void main(String[] args) {
 
         //Make an ArrayList of Strings with 3 string objects
@@ -111,6 +114,21 @@ public class Mockprep {
 //        System.out.println("mockprep.uniqueNumber(anotherArray) = " + mockprep.uniqueNumber(anotherArray));
 //        System.out.println("mockprep.containsDuplicate(anotherArray) = " + mockprep.containsDuplicate(anotherArray));
 
+//        To test: create two sorted linked lists:
+//           llist1: 5->10->15,
+//           llist2: 2->3->20
+        Mockprep llist1 = new Mockprep();
+        Mockprep llist2 = new Mockprep();
+        llist1.addToTheLast(new ListNode(5));
+        llist1.addToTheLast(new ListNode(10));
+        llist1.addToTheLast(new ListNode(15));
+
+        llist2.addToTheLast(new ListNode(2));
+        llist2.addToTheLast(new ListNode(3));
+        llist2.addToTheLast(new ListNode(20));
+
+        llist1.head = llist1.mergeTwoLists(llist1.head, llist2.head);
+        llist1.printList();
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
@@ -190,23 +208,45 @@ public class Mockprep {
         }
     }
 
-    public static class ListNode {
+    public void addToTheLast(ListNode node) {
+        if (head == null) { //if list is empty
+            head = node;
+        } else { //if list is not empty
+            ListNode temp = head;
 
-        private int val;
-        private ListNode next;
-
-        public ListNode() {
-        }
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = node;
         }
     }
 
+    public void printList() {
+        ListNode temp = head;
 
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println(); //extra line after the printed list, optional.
+    }
+
+}
+
+class ListNode {
+
+    int val;
+    ListNode next;
+
+    public ListNode() {
+    }
+
+    public ListNode(int val) {
+        this.val = val;
+    }
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
