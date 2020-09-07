@@ -107,9 +107,10 @@ public class Mockprep {
 //        System.out.println("mockprep.singleNumber(arr) = " + mockprep.singleNumber(arr));
 
         //test out uniqueNumber method (using ArrayList):
-        int[] anotherArray = {7, 5, 6, 5, 9, 6, 7};
+//        int[] anotherArray = {7, 5, 6, 5, 9, 6, 7};
 //        System.out.println("mockprep.uniqueNumber(anotherArray) = " + mockprep.uniqueNumber(anotherArray));
-        System.out.println("mockprep.containsDuplicate(anotherArray) = " + mockprep.containsDuplicate(anotherArray));
+//        System.out.println("mockprep.containsDuplicate(anotherArray) = " + mockprep.containsDuplicate(anotherArray));
+
     }
 
     //Write a Java method that takes in a parameter and counts up to that parameter
@@ -156,6 +157,7 @@ public class Mockprep {
     //Given an array of integers, find if the array contains any duplicates.
     //Your function should return true if any value appears at least twice in the array,
     // and it should return false if every element is distinct.
+    //Time complexity: O(n). Space complexity: O(n).
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<>(nums.length);
 
@@ -166,6 +168,44 @@ public class Mockprep {
         System.out.println(set);
         return false;
 
+    }
+
+    //Merge two sorted linked lists and return it as a new sorted list.
+    //The new list should be made by splicing together the nodes of the first two lists.
+    //Time complexity: O(n). Space complexity: O(n).
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if(l1 == null) {
+            return l2;
+        }
+        if(l2 == null) {
+            return l1;
+        }
+
+        if(l1.val <= l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
+    }
+
+    public static class ListNode {
+
+        private int val;
+        private ListNode next;
+
+        public ListNode() {
+        }
+
+        public ListNode(int val) {
+            this.val = val;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 
 
